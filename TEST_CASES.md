@@ -1,76 +1,78 @@
 # TEST CASES: E-commerce TechGear US
 
-**Proyecto:** Operación Juez de Hierro
+**Project:** Operation Iron Judge
 **QA:** Marco López
-**Plataforma:** (https://www.saucedemo.com/)
+**Platform:** [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
 ---
 
 ## 1. Happy Path
 
-### TC-01: Compra del producto con éxito
+### TC-01: Successful Product Purchase
 
-**Descripción:** Validar que el usuario puede completar una compra desde el login hasta el checkout.
+**Description:** Validate that the user can complete a purchase flow from login to checkout.
 
-**Pasos:**
+**Steps:**
 
-1. Ingresar a [https://www.saucedemo.com/](https://www.saucedemo.com/)
-2. Ingresar usuario `standard_user` y contraseña `secret_sauce`
-3. Hacer clic en **Login**
-4. Hacer clic en **Add to cart** en el producto **"Sauce Labs Backpack"** para agregarlo al carrito
-5. Hacer clic en el icono del **Carrito**
-6. Hacer clic en **Checkout**
-7. Ingresar datos: Nombre: `Marco`, Apellido: `López`, Código Postal: `21001`
-8. Hacer clic en **Continue**
-9. Hacer clic en **Finish**
+1. Navigate to [https://www.saucedemo.com/](https://www.saucedemo.com/)
+2. Enter username `standard_user` and password `secret_sauce`
+3. Click on **Login**
+4. Click **Add to cart** on the **"Sauce Labs Backpack"** product
+5. Click on the **Cart** icon
+6. Click on **Checkout**
+7. Enter information: First Name: `Marco`, Last Name: `López`, Zip Code: `21001`
+8. Click on **Continue**
+9. Click on **Finish**
 
-**Resultado Esperado:**
+**Expected Result:**
 
-- El sistema debe mostrar el mensaje: `"Thank you for your order!"`
+- The system must display the message: `"Thank you for your order!"`
 
 ---
 
 ## 2. Negative Path
 
-### TC-02: Intento de Login con usuario bloqueado
+### TC-02: Login attempt with a blocked user
 
-**Descripción:** Verificar que el sistema impida el acceso a usuarios con status `locked_out_user`
+**Description:** Verify that the system prevents access to users with the status `locked_out_user`.
 
-**Pasos:**
+**Steps:**
 
-1. Ingresar a [https://www.saucedemo.com/](https://www.saucedemo.com/)
-2. Ingresar usuario `locked_out_user` y contraseña `secret_sauce`
-3. Hacer clic en **Login**
+1. Navigate to [https://www.saucedemo.com/](https://www.saucedemo.com/)
+2. Enter username `locked_out_user` and password `secret_sauce`
+3. Click on **Login**
 
-**Resultado Esperado:**
+**Expected Result:**
 
-- El sistema **no** debe permitir el ingreso.
-- Muestra el error: `"Epic sadface: Sorry, this user has been locked out."`
+- The system must **not** allow access.
+- It must display the error: `"Epic sadface: Sorry, this user has been locked out."`
 
 ---
 
 ## 3. Edge Case
 
-### TC-03: Checkout con el carrito vacío
+### TC-03: Checkout with an empty cart
 
-**Descripción:** Verificar el comportamiento del sistema cuando se intenta pagar sin productos
+**Description:** Verify system behavior when attempting to checkout without any products in the cart.
 
-**Pasos:**
+**Steps:**
 
-1. Ingresar a [https://www.saucedemo.com/](https://www.saucedemo.com/)
-2. Ingresar usuario `standard_user` y contraseña `secret_sauce`
-3. Hacer clic en **Login**
-4. Hacer clic directamente en el icono del **Carrito**
-5. Hacer clic en el botón **Checkout**
+1. Navigate to [https://www.saucedemo.com/](https://www.saucedemo.com/)
+2. Enter username `standard_user` and password `secret_sauce`
+3. Click on **Login**
+4. Click directly on the **Cart** icon
+5. Click on the **Checkout** button
 
-**Resultado Esperado:**
+**Expected Result:**
 
-- **Idealmente:** El botón de "Checkout" debería mostrar un mensaje de "Carrito Vacío"
-- **Nota para el reporte:** El sistema permite avanzar con el carrito vacío.
+- **Ideally:** The "Checkout" button should display an "Empty Cart" message.
+- **Report Note:** Currently, the system allows proceeding with an empty cart.
 
-## 4. Criterios de Auditoría IA (Gemini)
+---
 
-Para la misión de TechGear US, se enviarán las descripciones de los productos a la IA buscando:
+## 4. AI Audit Criteria (Gemini)
 
-- **Texto inapropiado:** Lenguaje ofensivo o no profesional.
-- **Garantías falsas:** Frases como "Garantía de por vida" que no estén en el contrato legal.
+For the TechGear US mission, product descriptions will be sent to the AI to identify:
+
+- **Inappropriate text:** Offensive or unprofessional language.
+- **False guarantees:** Phrases like "Lifetime Warranty" that are not included in the legal contract.
